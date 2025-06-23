@@ -1,6 +1,6 @@
 # TP-Grupal-2
 
-Este proyecto es una **Single Page Application (SPA)** desarrollada en **React** como parte del primer trabajo práctico grupal. El objetivo fue construir una aplicación funcional, visualmente atractiva y con conexión a datos externos e internos.
+Este proyecto es una **Single Page Application (SPA)** desarrollada en **React** como parte del segundo trabajo práctico grupal. El objetivo fue construir una aplicación funcional, visualmente atractiva y con conexión a datos externos e internos.
 
 ## 🚀 Tecnologías
 
