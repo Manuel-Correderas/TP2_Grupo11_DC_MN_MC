@@ -1,4 +1,323 @@
 /* src/views/HomePage.module.css */
-.homePage { padding: 20px; text-align: center; }
-.homePage h1 { color: #333; margin-bottom: 15px; }
-.homePage p { color: #666; font-size: 1.1em; }
+
+.homePageContainer {
+  padding: 0.8rem; /* Aún más compacto: Padding general de la página */
+  max-width: 1200px;
+  margin: 0.5rem auto; /* Aún más compacto: Reduce margen vertical del contenedor principal */
+  background-color: rgba(42, 42, 42, 0.98);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  border: 1px solid #007bff;
+  color: #e0e0e0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Sección de "Nuestro Equipo" */
+.teamSectionContainer {
+  margin-bottom: 0.5rem; /* Aún más compacto: Espacio debajo de la sección de equipo */
+  padding-top: 0.2rem; /* Aún más compacto: Pequeño padding interno */
+}
+
+.teamSectionTitle {
+  font-size: 2rem;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 0.4rem; /* Aún más compacto: Espacio debajo del título "Nuestro Equipo" */
+}
+
+.teamMembersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .teamMembersGrid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamMembersGrid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+}
+
+/* Sección Misión, Visión y Valores */
+.missionVisionValuesSection {
+  margin-top: 1rem; /* Aún más compacto: Margen superior para acercarla al equipo */
+  border-top: 1px solid rgba(68, 68, 68, 0.7);
+  padding-top: 0.8rem; /* Aún más compacto: Padding superior para el contenido después de la línea */
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 0.6rem; /* Aún más compacto: Margen debajo del título "Nuestra Esencia" */
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.valueCard {
+  background-color: rgba(51, 51, 51, 0.85);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border: none;
+  border-left: 5px solid #007bff;
+  color: #eee;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.valueCardTitle {
+  font-size: 1.2rem;
+  color: #61dafb;
+  margin-bottom: 0.5rem;
+}
+
+.valueCardText {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.logoContainer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLink {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.navLink:hover,
+.navLink:focus {
+  background-color: #555;
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  .navList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .navLink {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    margin: 0 5px;
+  }
+  .logoContainer {
+    display: none;
+  }
+  body {
+    padding-bottom: 60px;
+  }
+}
+
+.memberCard {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow:
+    -5px -5px 15px rgba(0, 0, 0, 0.7),
+    5px 5px 15px rgba(0, 0, 0, 0.7),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+    inset -2px -2px 5px rgba(60, 60, 60, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #007bff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 250px;
+  width: 100%;
+}
+
+.memberCard:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    -7px -7px 20px rgba(0, 0, 0, 0.8),
+    7px 7px 20px rgba(0, 0, 0, 0.8),
+    inset 3px 3px 6px rgba(0, 0, 0, 0.6),
+    inset -3px -3px 6px rgba(60, 60, 60, 0.3);
+}
+
+.memberAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #61dafb;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.7);
+  margin-bottom: 0.8rem;
+}
+
+.memberCardH3 {
+  font-size: 1.3rem;
+  color: #00aaff;
+  margin-bottom: 0.3rem;
+}
+
+.memberRoleTitle {
+  font-size: 0.85rem;
+  color: #bbb;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.memberExpertise {
+  font-size: 0.8rem;
+  color: #ccc;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+  flex-grow: 1;
+}
+
+.memberPortfolioBtn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.memberPortfolioBtn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+.searchInput {
+  padding: 0.6rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+
+
+/* Agregado a tu HomePage.module.css */
+
+.memberCard {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow:
+    -5px -5px 15px rgba(0, 0, 0, 0.7),
+    5px 5px 15px rgba(0, 0, 0, 0.7),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+    inset -2px -2px 5px rgba(60, 60, 60, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #007bff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 250px;
+  width: 100%;
+  animation: fadeInCard 0.7s ease-in;
+}
+
+.memberCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 8px 20px rgba(0, 123, 255, 0.6),
+    inset 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.memberAvatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #000;
+  border: 3px solid #61dafb;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.7);
+  margin-bottom: 0.8rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,151 @@
+.changelog-container {
+    max-width: 900px;
+    margin: 0.1rem auto 1rem auto;
+    padding: 1.2rem; 
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+}
+
+.changelog-header {
+    text-align: left;
+    margin-bottom: 1.2rem; 
+}
+
+.changelog-title {
+    font-size: 2rem; 
+    color: #007bff;
+    margin-bottom: 0.7rem; 
+}
+
+.changelog-subtitle {
+    font-size: 0.9rem;
+    color: #bbb;
+    line-height: 1.4;
+}
+
+/* Sección que contiene las entradas de la bitácora */
+.changelog-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 1.2rem; 
+    margin-top: 1.5rem; 
+}
+
+/* Estilos para cada entrada de versión (la "card" de la bitácora) */
+.version-entry {
+    background-color: #333;
+    padding: 1rem; 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 4px solid #007bff;
+    transition: transform 0.2s ease-in-out;
+}
+
+.version-entry:hover {
+    transform: translateY(-5px);
+}
+
+.version-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem; 
+    padding-bottom: 0.4rem; 
+    border-bottom: 1px solid #444;
+}
+
+.version-number {
+    font-size: 1.2rem; 
+    color: #007bff;
+    font-weight: bold;
+}
+
+.version-date {
+    font-size: 0.8rem; 
+    color: #bbb;
+}
+
+.version-author {
+    font-size: 0.85rem; 
+    color: #ccc;
+    margin-top: 0.4rem; 
+    font-style: italic;
+}
+
+/* Estilos para el tipo de cambio (new, improvement, update) */
+.change-type-tag {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.25rem 0.5rem; 
+    border-radius: 4px;
+    font-size: 0.7rem; 
+    font-weight: bold;
+    margin-top: 0.5rem; 
+    margin-bottom: 0.5rem; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Modificadores de color para tipos de cambio específicos */
+.new {
+    background-color: #28a745;
+}
+
+.improvement {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.update {
+    background-color: #17a2b8;
+}
+
+.version-description {
+    font-size: 0.85rem; 
+    color: #ccc;
+    line-height: 1.4; 
+    margin-bottom: 0.7rem; 
+    flex-grow: 1;
+}
+
+.version-impact {
+    font-size: 0.8rem; 
+    color: #a0a0a0;
+    margin-top: 0.4rem; 
+    border-top: 1px dashed #444;
+    padding-top: 0.4rem; 
+}
+
+/* Responsive para la sección de bitácora */
+@media (max-width: 768px) {
+    .changelog-container {
+        padding: 0.8rem;
+        margin: 0.1rem auto 0.6rem auto;
+    }
+    .changelog-title {
+        font-size: 1.6rem;
+    }
+    .changelog-subtitle {
+        font-size: 0.85rem;
+    }
+    .changelog-sections-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    .version-entry {
+        padding: 0.8rem;
+    }
+    .version-number {
+        font-size: 1.1rem;
+    }
+    .version-date {
+        font-size: 0.75rem;
+    }
+}

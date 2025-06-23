@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import './RecetaPage.module.css' // Asegurate de crear este archivo y agregarlo
 
 export default function RecetaPage() {
   const { id } = useParams()
@@ -17,22 +18,27 @@ export default function RecetaPage() {
   if (!receta) return <p>Cargando receta...</p>
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <Link to="/api-recetas" style={{ textDecoration: 'none', color: '#007bff' }}>
-        ← Volver
-      </Link>
-      <h1>{receta.strMeal}</h1>
-      <h3>{receta.strCategory} • {receta.strArea}</h3>
-      <img src={receta.strMealThumb} alt={receta.strMeal} style={{ maxWidth: '100%', borderRadius: '12px' }} />
-      <p style={{ marginTop: '1rem' }}>{receta.strInstructions}</p>
-      {receta.strYoutube && (
-        <div style={{ marginTop: '1rem' }}>
-          <h4>Video:</h4>
-          <a href={receta.strYoutube} target="_blank" rel="noopener noreferrer">
-            Ver en YouTube
-          </a>
-        </div>
-      )}
-    </div>
-  )
+  <div style={{ padding: '2rem' }} className="fade-in">
+    <Link to="/api-recetas" style={{ textDecoration: 'none', color: '#007bff' }}>
+      ← Volver
+    </Link>
+    <h1>{receta.strMeal}</h1>
+    <h3>{receta.strCategory} • {receta.strArea}</h3>
+    <img
+      src={receta.strMealThumb}
+      alt={receta.strMeal}
+      style={{ maxWidth: '100%', borderRadius: '12px' }}
+    />
+    <p style={{ marginTop: '1rem' }}>{receta.strInstructions}</p>
+    {receta.strYoutube && (
+      <div style={{ marginTop: '1rem' }}>
+        <h4>Video:</h4>
+        <a href={receta.strYoutube} target="_blank" rel="noopener noreferrer">
+          Ver en YouTube
+        </a>
+      </div>
+    )}
+  </div>
+)
+
 }

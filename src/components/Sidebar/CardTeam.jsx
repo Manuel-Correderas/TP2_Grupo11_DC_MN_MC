@@ -1,17 +1,16 @@
 import { Link } from 'react-router-dom'
+import styles from '../../views/HomePage.module.css'
 
-export default function CardTeam({ nombre, imagen, id }) {
+export default function CardTeam({ nombre, imagen, id, role }) {
   return (
-    <div className="card-team">
-      <img
-        src={imagen}
-        alt={nombre}
-        className="card-team__img"
-      />
-      <h3 className="card-team__nombre">{nombre}</h3>
-      <Link to={`/miembros/${id}`} className="btn-ver-mas">
+    <div className={`${styles.memberCard}`}>
+      <img src={imagen} alt={nombre} className={styles.memberAvatar} />
+      <h3 className={styles.memberCardH3}>{nombre}</h3>
+      <p className={styles.memberRoleTitle}>{role}</p>
+      <Link to={`/miembros/${id}`} className={styles.memberPortfolioBtn}>
         Ver más
       </Link>
     </div>
   )
 }
+

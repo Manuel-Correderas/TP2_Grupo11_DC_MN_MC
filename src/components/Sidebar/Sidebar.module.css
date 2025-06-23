@@ -1,13 +1,12 @@
-/* src/components/Sidebar/Sidebar.module.css */
 .sidebar {
-  width: 250px; /* Ancho del sidebar */
-  background-color: #333; /* Color de fondo oscuro */
+  width: 250px;
+  background-color: #333;
   color: white;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  flex-shrink: 0; /* Evita que el sidebar se encoja */
+  flex-shrink: 0;
 }
 
 .logoContainer {
@@ -18,69 +17,153 @@
 .logo {
   max-width: 150px;
   height: auto;
-  border-radius: 5px; /* Un poco de estilo para el logo */
+  border-radius: 5px;
 }
 
 .navList {
   list-style: none;
   padding: 0;
-  margin: 0; /* Asegurarse de que no haya margen por defecto */
+  margin: 0;
 }
 
 .navLink {
-  display: block; /* Para que ocupe todo el ancho del li */
-  padding: 10px 15px; /* Más padding para los lados */
+  display: block;
+  padding: 10px 15px;
   color: white;
   text-decoration: none;
   font-size: 1.1em;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Añadida transición para el transform */
-  border-radius: 4px; /* Para esquinas redondeadas al hacer hover */
-  margin-bottom: 5px; /* Espacio entre enlaces */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 4px;
+  margin-bottom: 5px;
 }
 
 .navLink:hover,
-.navLink:focus { /* Añadido focus para accesibilidad */
+.navLink:focus {
   background-color: #555;
-  transform: translateX(5px); /* Pequeño efecto al pasar el mouse */
+  transform: translateX(5px);
 }
 
-/* Estilos para el link activo (puedes implementarlo con NavLink de react-router-dom) */
-/* .navLink.active {
-  background-color: #007bff; // Un color distintivo para la página actual
-} */
-
-
-/* Responsividad para Sidebar en pantallas pequeñas */
 @media (max-width: 768px) {
   .sidebar {
-    width: 100%; /* Ocupa todo el ancho en móviles */
-    height: auto; /* Altura automática */
-    flex-direction: row; /* Los enlaces se alinean en una fila */
-    justify-content: space-around; /* Espacia los enlaces */
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
     padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra en la parte inferior */
-    position: fixed; /* Lo fija en la parte superior o inferior */
-    bottom: 0; /* Lo fija en la parte inferior de la pantalla */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
   }
   .navList {
     display: flex;
-    flex-wrap: wrap; /* Permite que los enlaces se envuelvan si son muchos */
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%; /* Asegura que la lista ocupe todo el ancho disponible */
+    width: 100%;
   }
   .navLink {
     padding: 5px 10px;
     font-size: 0.9em;
-    margin: 0 5px; /* Espacio horizontal entre enlaces */
+    margin: 0 5px;
   }
   .logoContainer {
-    display: none; /* Ocultar el logo en pantallas pequeñas para ahorrar espacio */
+    display: none;
   }
-  /* Ajuste para el contenido principal cuando el sidebar está en la parte inferior */
   body {
-    padding-bottom: 60px; /* Ajusta este valor según la altura de tu sidebar móvil */
+    padding-bottom: 60px;
+  }
+}
+
+.memberCard {
+  background-color: #2a2a2a;
+  border-radius: 6px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.memberCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.memberAvatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  margin-bottom: 15px;
+}
+
+.memberCardH3 {
+  font-size: 1.5rem;
+  color: #00aaff;
+  margin-bottom: 8px;
+}
+
+.memberRoleTitle {
+  font-size: 0.95rem;
+  color: #bbb;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.memberExpertise {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.memberPortfolioBtn {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.memberPortfolioBtn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .memberCard {
+    padding: 15px;
+  }
+  .memberAvatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  .memberCardH3 {
+    font-size: 1.3rem;
+  }
+  .memberRoleTitle,
+  .memberExpertise {
+    font-size: 0.85rem;
+  }
+  .memberPortfolioBtn {
+    padding: 7px 15px;
+    font-size: 0.8rem;
   }
 }

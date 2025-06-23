@@ -1,3 +1,4 @@
+/* src/components/CardData.css */
 .card-data {
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -29,16 +30,6 @@
   margin: 0.5rem 0;
 }
 
-.card-data__highlight {
-  display: inline-block;
-  background: #ffda75;
-  padding: 0.3rem 0.6rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 0.5rem;
-  border-radius: 6px;
-}
-
 .card-data__recipe {
   font-size: 0.9rem;
   color: #444;
@@ -58,9 +49,15 @@
 .card-data__btn:hover {
   background-color: #0056b3;
 }
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem; 
+  gap: 1.5rem;
   padding: 1rem;
+}
+.card-data__recipe {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.5rem 0 1rem 0;
 }
