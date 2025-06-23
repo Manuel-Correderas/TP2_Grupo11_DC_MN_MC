@@ -1,4 +1,4 @@
-# TP-Grupal-1
+# TP-Grupal-2
 
 Este proyecto es una **Single Page Application (SPA)** desarrollada en **React** como parte del primer trabajo práctico grupal. El objetivo fue construir una aplicación funcional, visualmente atractiva y con conexión a datos externos e internos.
 
@@ -15,10 +15,10 @@ Este proyecto es una **Single Page Application (SPA)** desarrollada en **React**
 ## 🛠️ Instalación
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repo-tp1.git
-cd tu-repo-tp1
+git https://github.com/Manuel-Correderas/TP2_Grupo11_DC_MN_MC
+cd TP2_Grupo11_DC_MN_MC
 npm install
-npm run dev
+npm start
 
 ✅ Funcionalidades implementadas
  Animaciones suaves y efectos hover en tarjetas y botones.
@@ -56,7 +56,7 @@ Changelog o bitácora en sección dedicada	✅
 Despliegue funcional en Vercel y GitHub Pages	✅
 Organización clara del código en carpetas (views, data)	✅
 
-👨‍💻 Autores
+##👨‍💻 Autores
 
 Manuel Correderas
 
