@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from '../../views/HomePage.module.css'
+import 'yet-another-react-lightbox/styles.css';
+
 
 export default function CardTeam({ nombre, imagen, id, role }) {
   return (

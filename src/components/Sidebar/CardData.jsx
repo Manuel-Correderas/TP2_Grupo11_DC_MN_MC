@@ -1,6 +1,8 @@
 // src/components/CardData.jsx
 import { Link } from 'react-router-dom';
 import './CardData.css';
+import 'yet-another-react-lightbox/styles.css';
+
 
 export default function CardData({ id, title, category, image, description }) {
   return (

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import logoGrupo from '../../assets/icons/logo_grupo.svg'; // Asegúrate de que la ruta sea correcta. Si no tienes este logo, puedes omitir la línea y el <img>
 
+
 const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
